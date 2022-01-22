@@ -1,5 +1,4 @@
-# Hoa and Morgan 
-A full-stack-e-commerce project with React-frontend and Ruby-backend
+# A full-stack-e-commerce project with React-frontend and Ruby-backend
 - to start 
 -     cd to ruby-backend  and rake server
 -   in another terminal 
@@ -135,3 +134,5 @@ fetch("http://localhost:9292/test")
 [dbdiagram.io]: https://dbdiagram.io/
 [postman download]: https://www.postman.com/downloads/
 [network tab]: https://developer.chrome.com/docs/devtools/network/
+
+HOA And Morgan Project
