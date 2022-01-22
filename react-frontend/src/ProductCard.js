@@ -6,6 +6,8 @@ function ProductCard ({ product, handleAddProduct, user }) {
   const [count, setCount] = useState(0);
 
   function submitOrder(product) {
+
+
     console.log(product.id)
     let data = { user_id: user.id, product_id: product.id };
 
@@ -19,7 +21,6 @@ function ProductCard ({ product, handleAddProduct, user }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        // console.log("Success:", data);
         setCount((count => {
           return  count + 1
        }))
@@ -52,16 +53,14 @@ function ProductCard ({ product, handleAddProduct, user }) {
   return (
     <div className="drink-card">
       <ul className = 'drink-ul'>
-      {/* <Link to={`products/${product.id}`}> */}
       <img src={product.image} className = 'card-img'  alt={"product name"} />
       <li style={{ color: 'black', fontWeight: 'bold' }}>{product.name}</li>
       {/* <p>{description}</p> */}
       <p>Price: ${product.price}</p>
-      {/* <button className="emoji-button favorite active" onClick={handleLikes}>✨ {addLikes} likes</button>
-      <button onClick={() => handleAddProduct(product)} className="addToCart">Add</button> */}
-      {/* </Link> */}
+      <button className="emoji-button favorite active" onClick={handleLikes}>✨ {addLikes} likes</button>
+      <button onClick={() => handleAddProduct(product)} className="addToCart">Add</button>
       {user? 
-        <Button style={{width:"100%"}} onClick={() => submitOrder(product)}>{count} {product.name} Ordered</Button> :  <Link to="/login">
+        <Button style={{width:"100%"}}  onClick={() => {submitOrder(product) }}>{count} {product.name} Ordered</Button> :  <Link to="/login">
         
         <Button style={{width:"100%"}}>Please Log In to Add to Cart</Button> 
         </Link>

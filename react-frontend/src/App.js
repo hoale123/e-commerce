@@ -1,11 +1,11 @@
 import React from 'react';
+import ShowAsideImage from "./ShowAsideImage"
 import RecentOrders from "./RecentOrders"
 import Aside from './Aside';
 import { useEffect, useState } from "react"
 import Products from './Products';
 import Headers from './Headers';
-// import ShowDrinks from "./ShowDrinks"
-// import CartContainer from './CartContainer';
+import CartContainer from './CartContainer';
 import { Header, Segment, } from "semantic-ui-react";
 import Navbar from "./Navbar";
 import LogInPage from "./LoginPage"
@@ -13,19 +13,22 @@ import Logout from "./Logout";
 import EditProfile from "./EditProfile";
 import Register from "./Register";
 import {
-  BrowserRouter,
   Switch,
   Route,
   Link,
 } from "react-router-dom";
-
+const cartFromLocalStorage = JSON.parse(localStorage.getItem("shoppingCart") || "[]")
 
 function App() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("newest");
-  const [shoppingCart, setCart] = useState([]);
+  const [shoppingCart, setCart] = useState(cartFromLocalStorage);
   const [user, setUser] = useState(localStorage.getItem("user"));
+
+  useEffect(() => {
+    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart))
+  },[shoppingCart])
 
 
   useEffect(() => {
@@ -44,6 +47,9 @@ function App() {
     } else {
       setCart([...shoppingCart, { ...product, qty: 1 }]);
     }
+    // localStorage.setItem("product",product)
+    // console.log(product)
+
   }
 
   function handleRemoveProduct(product) {
@@ -53,12 +59,13 @@ function App() {
     } else {
       setCart(shoppingCart.map(p => p.id === product.id ? {...inCart, qty: inCart.qty - 1}:p))
     }
+    // localStorage.setItem(product)
   }
 
   //MAKE THIS AN ORDER OBJECT TO PASS UP FROM THE CART TO THE ORDER FORM 
-  function handleCheckout() {
-    console.log("handling checkout")
-  }
+  // function handleCheckout() {
+  //   console.log("handling checkout")
+  // }
 
   useEffect(() => {
     fetch("http://localhost:9292/products")
@@ -85,7 +92,6 @@ function App() {
   });
 
   const updatedListings = sortedProducts.filter((product)=> product.name.toLowerCase().includes(search.toLowerCase()) || product.description.toLowerCase().includes(search.toLowerCase()));
-
   return (
     <div className="App">
     <Navbar
@@ -102,8 +108,12 @@ function App() {
         </Link>
       </Segment>
       <Aside setProductsData={setProducts} productsData={products} />
-
       <Switch>
+      <Route exact path="/products/:id">
+          {products.length === 0 ? null : (
+            <ShowAsideImage products={products}  />
+          )}
+        </Route>
       <Route exact path="/login">
           <LogInPage setUser={setUser} user={user} />
         </Route>
@@ -116,6 +126,13 @@ function App() {
 
         <Route exact path="/recent-orders">
           <RecentOrders  user={user} />
+          <div className="col-4">
+              <CartContainer
+              handleAddProduct={handleAddProduct}
+              shoppingCart={shoppingCart}
+              handleRemoveProduct={handleRemoveProduct}
+              />
+            </div>
         </Route>
 
         <Route exact path="/edit-profile">
@@ -136,14 +153,6 @@ function App() {
               products={updatedListings} 
               handleAddProduct={handleAddProduct}
             />
-            {/* <div className="col-4">
-              <CartContainer
-              handleAddProduct={handleAddProduct}
-              shoppingCart={shoppingCart}
-              handleCheckout={handleCheckout}
-              handleRemoveProduct={handleRemoveProduct}
-              />
-            </div> */}
           </Route>
       </Switch>
     </div>
