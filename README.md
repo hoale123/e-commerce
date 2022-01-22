@@ -4,7 +4,7 @@
 -     - rake db:migrate rake db:seed
 -   in another terminal 
 -     cd to react-frontend and npm start
--       if error,
+-   if error,
 -         nvm install 14 and nvm use 14
 
 
