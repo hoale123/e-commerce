@@ -1,11 +1,17 @@
 # A full-stack-e-commerce project with React-frontend and Ruby-backend
 - to start 
 -     cd to ruby-backend  and rake server
+-     - rake db:migrate rake db:seed
 -   in another terminal 
 -     cd to react-frontend and npm start
+-       if error,
+-         nvm install 14 and nvm use 14
 
-- additonal install / running database
--     rake db:migrate rake db:seed
+
+
+
+
+- additonal installation maybe needed
 -     npm i && npm start
 -     npm install react-router-dom
 -     npm install semantic-ui-react semantic-ui-css
