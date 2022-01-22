@@ -1,5 +1,7 @@
 # Hoa and Morgan 
 A full-stack-e-commerce project with React-frontend and Ruby-backend
+features:
+User interface: login/logout/edit profile/Cart-Order
 
 # Phase 3 Project Guidelines
 
