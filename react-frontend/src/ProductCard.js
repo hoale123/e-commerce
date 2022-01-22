@@ -51,14 +51,14 @@ function ProductCard ({ product, handleAddProduct, user }) {
   }
 
   return (
-    <div className="drink-card">
-      <ul className = 'drink-ul'>
+    <div className="product-card">
+      <ul className = 'product-ul'>
       <img src={product.image} className = 'card-img'  alt={"product name"} />
       <li style={{ color: 'black', fontWeight: 'bold' }}>{product.name}</li>
       {/* <p>{description}</p> */}
       <p>Price: ${product.price}</p>
       <button className="emoji-button favorite active" onClick={handleLikes}>✨ {addLikes} likes</button>
-      <button onClick={() => handleAddProduct(product)} className="addToCart">Add</button>
+      <button onClick={() => handleAddProduct(product)} className="addToCart">AddToCart</button>
       {user? 
         <Button style={{width:"100%"}}  onClick={() => {submitOrder(product) }}>{count} {product.name} Ordered</Button> :  <Link to="/login">
         

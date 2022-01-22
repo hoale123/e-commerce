@@ -1,6 +1,6 @@
 import React from 'react';
-import ShowAsideImage from "./ShowAsideImage"
-import RecentOrders from "./RecentOrders"
+import ShowMoreInfo from "./ShowMoreInfo"
+import CartOrders from "./CartOrders"
 import Aside from './Aside';
 import { useEffect, useState } from "react"
 import Products from './Products';
@@ -111,7 +111,7 @@ function App() {
       <Switch>
       <Route exact path="/products/:id">
           {products.length === 0 ? null : (
-            <ShowAsideImage products={products}  />
+            <ShowMoreInfo products={products}  />
           )}
         </Route>
       <Route exact path="/login">
@@ -125,7 +125,7 @@ function App() {
         </Route>
 
         <Route exact path="/recent-orders">
-          <RecentOrders  user={user} />
+          <CartOrders  user={user} />
           <div className="col-4">
               <CartContainer
               handleAddProduct={handleAddProduct}
@@ -139,9 +139,6 @@ function App() {
           <EditProfile user={user} setUser={setUser} />
         </Route>
 
-        {/* <Route path="*">
-          <h1>404 not found</h1>
-        </Route> */}
           <Route path="/">
             <Headers 
               handleSearch={handleSearch}  
@@ -154,6 +151,9 @@ function App() {
               handleAddProduct={handleAddProduct}
             />
           </Route>
+        <Route path="*">
+          <h1>404 not found</h1>
+        </Route>
       </Switch>
     </div>
   )

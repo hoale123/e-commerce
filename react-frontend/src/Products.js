@@ -11,7 +11,7 @@ function Products( { products, handleAddProduct, user } ) {
   }
 
   return (
-    <div className = 'drink-container'>
+    <div className = 'product-container'>
       
       {renderProducts()}
       </div>

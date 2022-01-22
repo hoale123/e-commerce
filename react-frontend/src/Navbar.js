@@ -25,7 +25,16 @@ function Navbar({ user }) {
               style={{ color: "grey" }}
               activeStyle={{ fontWeight: "bold", color: "black" }}
             >
-              Hello, {user.name}!
+              Hello, {user.name}! 
+            </NavLink>
+          </Menu.Item>
+          <Menu.Item>
+            <NavLink
+              to="/edit-profile"
+              style={{ color: "grey" }}
+              activeStyle={{ fontWeight: "bold", color: "black" }}
+            >
+              Edit profile 
             </NavLink>
           </Menu.Item>
           <Menu.Item>
