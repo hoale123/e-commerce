@@ -1,5 +1,6 @@
 # Hoa and Morgan 
-e-commerce
+A full-stack-e-commerce project with React-frontend and Ruby-backend
+
 # Phase 3 Project Guidelines
 
 ## Learning Goals
