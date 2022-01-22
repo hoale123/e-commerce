@@ -1,15 +1,20 @@
 import React from "react";
 import ProductCard from "./ProductCard";
+// import { Header } from "semantic-ui-react";
 
-function Products( { products, handleAddProduct } ) {
+
+function Products( { products, handleAddProduct, user } ) {
   function renderProducts() {
     return products.map((product)=> (
-      <ProductCard key={product.id} product={product} handleAddProduct={handleAddProduct} />
+      <ProductCard key={product.id} user={user} product={product} handleAddProduct={handleAddProduct} />
     ));
   }
 
   return (
-      <ul className="cards">{renderProducts()}</ul>
+    <div className = 'drink-container'>
+      
+      {renderProducts()}
+      </div>
   );
 }
 

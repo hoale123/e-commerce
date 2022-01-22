@@ -30,36 +30,37 @@ class ApplicationController < Sinatra::Base
     categories.to_json
   end
 
-  post '/create_order' do
-    puts products_orders_params["product_id"]
-    order = Order.create(user_id: products_orders_params["user_id"])
-
-    products_orders = ProductsOrders.create(product_id: products_orders_params["product_id"], order_id: order.id)
-    order.to_json
-  end
-
+  
   post "/products_orders" do 
     order = Order.find_or_create_by(user_id: products_orders_params["user_id"])
     order.products.create(product_ids: products_orders_params["product_id"])
     order.to_json
   end
-
+  
   delete "/orders/:id" do
     # binding.pry
     order = Order.find(params[:id])
     order.delete
   end
-
-
-
+  
+  
+  
   patch "/products/:id" do
     product = Product.find(params[:id])
     product.update(likes: params[:likes])
     product.to_json
     # {message: likes added}
   end
+  
+  post '/create_order' do
+    puts products_orders_params["product_id"]
+    order = Order.create(user_id: products_orders_params["user_id"])
+    products_orders = OrdersProducts.create(product_id: products_orders_params["product_id"], order_id: order.id)
 
+    order.to_json
 
+  end
+  
   private 
   
   def products_orders_params

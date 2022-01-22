@@ -57,11 +57,11 @@ function Navbar({ user }) {
         <>
           <Menu.Item>
             <NavLink
-              to="/edit-profile"
+              to="/recent-orders"
               style={{ color: "grey" }}
               activeStyle={{ fontWeight: "bold", color: "black" }}
             >
-              Edit-Profile
+              Recent Orders
             </NavLink>
           </Menu.Item>
         </>

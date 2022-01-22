@@ -1,11 +1,12 @@
 import React from 'react';
+import RecentOrders from "./RecentOrders"
 import Aside from './Aside';
 import { useEffect, useState } from "react"
 import Products from './Products';
 import Headers from './Headers';
-import CartContainer from './CartContainer';
+// import ShowDrinks from "./ShowDrinks"
+// import CartContainer from './CartContainer';
 import { Header, Segment, } from "semantic-ui-react";
-// import 'semantic-ui-css/semantic.min.css'
 import Navbar from "./Navbar";
 import LogInPage from "./LoginPage"
 import Logout from "./Logout";
@@ -86,7 +87,6 @@ function App() {
   const updatedListings = sortedProducts.filter((product)=> product.name.toLowerCase().includes(search.toLowerCase()) || product.description.toLowerCase().includes(search.toLowerCase()));
 
   return (
-  <BrowserRouter>
     <div className="App">
     <Navbar
         user={user}
@@ -110,9 +110,12 @@ function App() {
         <Route exact path="/logout">
           <Logout setUser={setUser} />
         </Route>
-
         <Route exact path="/register">
           <Register setUser={setUser}/>
+        </Route>
+
+        <Route exact path="/recent-orders">
+          <RecentOrders  user={user} />
         </Route>
 
         <Route exact path="/edit-profile">
@@ -129,21 +132,21 @@ function App() {
               handleSort={handleSort}
             />
             <Products
+              user={user}
               products={updatedListings} 
               handleAddProduct={handleAddProduct}
             />
-            <div className="col-4">
+            {/* <div className="col-4">
               <CartContainer
               handleAddProduct={handleAddProduct}
               shoppingCart={shoppingCart}
               handleCheckout={handleCheckout}
               handleRemoveProduct={handleRemoveProduct}
               />
-            </div>
+            </div> */}
           </Route>
       </Switch>
     </div>
-    </BrowserRouter>
   )
 }
 
