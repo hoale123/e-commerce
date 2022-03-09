@@ -4,24 +4,9 @@ to start
 -     - rake db:migrate rake db:seed
  in another terminal 
 -     cd to react-frontend and npm start
-
-
-
-
-
 if error,
 -         nvm install 14 and nvm use 14
 
-
-
-
-
-additonal installation maybe needed
--     npm i && npm start
--     npm install react-router-dom
--     npm install semantic-ui-react semantic-ui-css
--     npm install axios
-------
 features:
 - User interface: login/logout/edit profile/Cart-Order
 - Actions : full CRUD, Addtocart, MoreInfo, AddToOrder, search, and filterBy.
