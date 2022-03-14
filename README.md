@@ -10,11 +10,8 @@ if error,
 features:
 - User interface: login/logout/edit profile/Cart-Order
 - Actions : full CRUD, Addtocart, MoreInfo, AddToOrder, search, and filterBy.
-<img width="1270" alt="Screen Shot 2022-02-21 at 2 41 19 AM" src="https://user-images.githubusercontent.com/47269779/154910113-f866206d-7e6e-40e4-9d37-e6f69f73434d.png">
-
-<img width="641" alt="Screen Shot 2022-02-21 at 2 41 28 AM" src="https://user-images.githubusercontent.com/47269779/154910123-2ce9199c-0fe1-495a-9e8f-cfc9bd0079f0.png">
-
-<img width="1277" alt="Screen Shot 2022-02-21 at 2 41 36 AM" src="https://user-images.githubusercontent.com/47269779/154910132-11a82c8b-d7c3-424f-a869-d0aba797b61b.png">
-<img width="1266" alt="Screen Shot 2022-02-21 at 2 41 51 AM" src="https://user-images.githubusercontent.com/47269779/154910143-d3e49abf-5869-4394-a669-e82d4a9d5e7b.png">
-<img width="1279" alt="Screen Shot 2022-02-21 at 2 42 08 AM" src="https://user-images.githubusercontent.com/47269779/154910156-c9c18b74-fa5a-4da0-9283-401c5a4b39e5.png">
-<img width="1268" alt="Screen Shot 2022-02-21 at 2 42 18 AM" src="https://user-images.githubusercontent.com/47269779/154910178-05e3ca1e-e218-42f9-a245-1aa2fe3ecb1c.png">
+- <img width="1277" alt="Screen Shot 2022-03-14 at 2 19 09 PM" src="https://user-images.githubusercontent.com/47269779/158236613-cab59f2d-95a4-4767-9d17-682c1aed51ef.png">
+<img width="1280" alt="Screen Shot 2022-03-14 at 2 20 35 PM" src="https://user-images.githubusercontent.com/47269779/158236629-0718f945-4041-499a-916a-61845adb5194.png">
+<img width="1280" alt="Screen Shot 2022-03-14 at 2 20 43 PM" src="https://user-images.githubusercontent.com/47269779/158236641-cbe1fc23-1586-4a9a-8763-7dcf4ac5a37f.png">
+<img width="1279" alt="Screen Shot 2022-03-14 at 2 20 52 PM" src="https://user-images.githubusercontent.com/47269779/158236651-280d576b-7886-4084-b0ca-a50e39742dc0.png">
+<img width="1280" alt="Screen Shot 2022-03-14 at 2 21 03 PM" src="https://user-images.githubusercontent.com/47269779/158236668-a06892c6-9864-4594-accc-7f09bfbc44e1.png">
