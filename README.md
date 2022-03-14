@@ -13,7 +13,7 @@ features:
 
 # HomePage
 <img width="1277" alt="Screen Shot 2022-03-14 at 2 19 09 PM" src="https://user-images.githubusercontent.com/47269779/158236613-cab59f2d-95a4-4767-9d17-682c1aed51ef.png">
-# Individual Item page for more info.
+# Individual Item page for more info
 <img width="1280" alt="Screen Shot 2022-03-14 at 2 20 35 PM" src="https://user-images.githubusercontent.com/47269779/158236629-0718f945-4041-499a-916a-61845adb5194.png">
 # Edit Profile avatar/picture
 <img width="1280" alt="Screen Shot 2022-03-14 at 2 20 43 PM" src="https://user-images.githubusercontent.com/47269779/158236641-cbe1fc23-1586-4a9a-8763-7dcf4ac5a37f.png">
