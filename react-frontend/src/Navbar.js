@@ -1,7 +1,7 @@
 import { NavLink} from "react-router-dom";
 import { Menu } from "semantic-ui-react";
 
-function Navbar({ user }) {
+function Navbar({ user,shoppingCart }) {
   return (
     <Menu style={{ marginBottom: "0px", paddingBottom: "0px" }}>
       {user ? (
@@ -70,7 +70,7 @@ function Navbar({ user }) {
               style={{ color: "grey" }}
               activeStyle={{ fontWeight: "bold", color: "black" }}
             >
-              Recent Orders
+                            {shoppingCart.length} Orders
             </NavLink>
           </Menu.Item>
         </>

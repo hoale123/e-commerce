@@ -11,7 +11,7 @@ function Filter({ handleSort, sortBy }) {
       <label>
         <strong>Sort by:</strong>
         <select onChange={handleChange} value={sortBy}>
-          <option value="newest">Newest</option>
+          <option value="likes">Most liked</option>
           <option value="price">Price (Low-High)</option>
           <option value="name">Name(A-Z)</option>
         </select>

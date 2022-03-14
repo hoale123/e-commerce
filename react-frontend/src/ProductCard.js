@@ -58,12 +58,13 @@ function ProductCard ({ product, handleAddProduct, user }) {
       {/* <p>{description}</p> */}
       <p>Price: ${product.price}</p>
       <button className="emoji-button favorite active" onClick={handleLikes}>✨ {addLikes} likes</button>
-      <button onClick={() => handleAddProduct(product)} className="addToCart">AddToCart</button>
+      {/* <button onClick={() => handleAddProduct(product)} className="addToCart">AddToCart</button> */}
       {user? 
-        <Button style={{width:"100%"}}  onClick={() => {submitOrder(product) }}>{count} {product.name} Ordered</Button> :  <Link to="/login">
+        <Button style={{width:"100%"}}  onClick={() => {handleAddProduct(product) }}>ADDToOrder</Button> :  <Link to="/login">
         
         <Button style={{width:"100%"}}>Please Log In to Add to Cart</Button> 
         </Link>
+        
 
       }
       </ul>

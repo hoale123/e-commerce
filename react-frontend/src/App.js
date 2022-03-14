@@ -22,14 +22,14 @@ const cartFromLocalStorage = JSON.parse(localStorage.getItem("shoppingCart") || 
 function App() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
-  const [sortBy, setSortBy] = useState("newest");
+  const [sortBy, setSortBy] = useState("likes");
   const [shoppingCart, setCart] = useState(cartFromLocalStorage);
   const [user, setUser] = useState(localStorage.getItem("user"));
 
   useEffect(() => {
     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart))
   },[shoppingCart])
-
+console.log(shoppingCart)
 
   useEffect(() => {
     fetch("http://localhost:9292/me", { credentials: "include" })
@@ -86,16 +86,22 @@ function App() {
       return a.name - b.name;
     } else if (sortBy === "price"){
         return a.price - b.price;
-    } else {
+    } else if (sortBy === "likes"){
+      return b.likes - a.likes;
+  } 
+    else {
         return a.id - b.id;
     }
   });
 
-  const updatedListings = sortedProducts.filter((product)=> product.name.toLowerCase().includes(search.toLowerCase()) || product.description.toLowerCase().includes(search.toLowerCase()));
+
+
+  const updatedListings = sortedProducts.filter((product)=> product.name.toLowerCase().includes(search.toLowerCase()) || product.description.toLowerCase().includes(search.toLowerCase()) || product.likes.toLowerCase().includes(search.toLowerCase()));
   return (
     <div className="App">
     <Navbar
         user={user}
+        shoppingCart={shoppingCart}
         style={{ marginBottom: "0px", paddingBottom: "0px" }}
       />
       <Segment style={{ marginTop: "0px" }}>
@@ -131,6 +137,7 @@ function App() {
               handleAddProduct={handleAddProduct}
               shoppingCart={shoppingCart}
               handleRemoveProduct={handleRemoveProduct}
+              products={products}
               />
             </div>
         </Route>
@@ -149,6 +156,7 @@ function App() {
               user={user}
               products={updatedListings} 
               handleAddProduct={handleAddProduct}
+              shoppingCart={shoppingCart}
             />
           </Route>
         <Route path="*">
